@@ -8,18 +8,27 @@ namespace backend_api.Controllers
     //[ApiController]
     public class QuestionsController : ControllerBase
     {
+        readonly QuizContext _quizContext;
+        public QuestionsController(QuizContext context) 
+        {
+            this._quizContext = context;
+        }
 
-
-        //[HttpGet]
-        //public IEnumerable<string> Get()
-        //{
-        //    return new string[] { "value1", "value2"};
-        //}
+        [HttpGet]
+        public IEnumerable<Models.Question> Get()
+        {
+            return new Models.Question[] { 
+                
+                new Models.Question() {Text = "Hello"},
+                new Models.Question() {Text = "Hi"}
+            };
+        }
 
         [HttpPost]
         public void Post([FromBody]Models.Question question) 
-        { 
-            
+        {
+            _quizContext.Questions.Add(new Models.Question() { Text = "test"});
+            _quizContext.SaveChanges();
         }
         
     }
