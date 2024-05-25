@@ -17,17 +17,13 @@ namespace backend_api.Controllers
         [HttpGet]
         public IEnumerable<Models.Question> Get()
         {
-            return new Models.Question[] { 
-                
-                new Models.Question() {Text = "Hello"},
-                new Models.Question() {Text = "Hi"}
-            };
+            return _quizContext.Questions;
         }
 
         [HttpPost]
         public void Post([FromBody]Models.Question question) 
         {
-            _quizContext.Questions.Add(new Models.Question() { Text = "test"});
+            _quizContext.Questions.Add(question);
             _quizContext.SaveChanges();
         }
         

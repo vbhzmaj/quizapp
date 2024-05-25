@@ -1,0 +1,12 @@
+<mat-card class="newBackground">
+    <mat-card-content>
+        <mat-list *ngFor="let question of questions">
+        <mat-list-item>
+            {{question.qtext}} {{question.correctAnswer}} {{question.wrongAnswer1}} {{question.wrongAnswer2}} {{question.wrongAnswer3}}
+        </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+    <mat-card-actions>
+
+    </mat-card-actions>
+</mat-card>

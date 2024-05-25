@@ -9,9 +9,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddCors();
 
-builder.Services.AddDbContext<QuizContext>(options =>
-                                            options.UseInMemoryDatabase("quiz"));
-
+builder.Services.AddDbContext<QuizContext>(options => options.UseInMemoryDatabase("quiz"));
 
 
 var app = builder.Build();

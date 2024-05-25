@@ -3,11 +3,18 @@ import { ApiService } from "./api.service";
 
 @Component({
     selector: 'question',
-    templateUrl: './question.component.html'
+    templateUrl: './question.component.html',
 })
+
 export class QuestionComponent {
 
-    question = {}
+    question = {
+        Qtext: "",
+        CorrectAnswer: "",
+        WrongAnswer1: "",
+        WrongAnswer2: "",
+        WrongAnswer3: ""
+    }
 
     constructor(private api: ApiService) {}
 
